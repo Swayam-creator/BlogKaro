@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include('./partials/head') %>
+    <title>Signup</title>
+</head>
+<body class="bg-dark">
+    <%- include('./partials/nav') %>
+    <h1 class="container text-center ">SIGNUP</h1>
+    <div class="container mt-5">
+        <form action="/user/signup" method="post">
+            <div class="mb-3 mt-5 w-6/12">
+              <label for="fullName" class="form-label text-white">Full Name</label>
+              <input type="text" class="form-control w-6/12"" id="fullName" name="fullName"  >
+    
+            </div>
+            <div class="mb-3 mt-5">
+              <label for="email" class="form-label w-6/12  text-white">Email address</label>
+              <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label w-6/12 text-white">Password</label>
+              <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+          </form>
+    </div>
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%- include('./partials/script') %>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<nav class="navbar bg- navbar-expand-lg " style="background-color: #cf161f" data-bs-theme="dark">
+    <div class="container-fluid" >
+      <a class="navbar-brand" href="#">BlogKaro</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <% if (locals.user) { %>
+            <li class="nav-item icon-link " >
+              <a class="icon-link icon-link-hover ms-2 " style="--bs-link-hover-color-rgb: 200, 135, 84;" href="/blog/add-new">
+                <span class="font-bold">Add Blog</span> 
+                <svg class="bi" aria-hidden="true"><use xlink:href="#arrow-right"></use></svg>
+              </a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <%= user.email %>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/user/logout">Log out</a></li>
+          <% }  else { %>
+              <li><a class="nav-link active" href="/user/signup">Create Account</a></li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/user/signin">Login</a>
+              </li>
+          <% } %>
+            
+             
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <% if(locals.error){ %>
+    <div class="container mt-5">
+
+      <div class="alert alert-danger" role="alert">
+        <%= locals.error %>
+      </div>
+      <% } %>
+    </div>
+ 
